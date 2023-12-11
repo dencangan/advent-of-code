@@ -1,7 +1,11 @@
 import os
 
-def parse_input(day: str):
-    file = open(os.path.join(os.path.dirname(os.path.dirname(__file__)), f'{day}/input.txt'), 'r')
+def parse_input(day: str, is_sample: bool = False):
+    if is_sample:
+        file_name = "sample"
+    else:
+        file_name = "input"
+    file = open(os.path.join(os.path.dirname(os.path.dirname(__file__)), f'{day}/{file_name}.txt'), 'r')
     lines = file.readlines()
     input_list = []
     for l in lines:
